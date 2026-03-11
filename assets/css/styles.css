@@ -7,20 +7,20 @@
     --font-semi: 600;
 }
 
-/*===== CORES DA BOM BRASIL (ESTRATÉGIA CLEAN) =====*/
-/* Passo 1: Definimos tons neutros para a base e reservamos as cores da marca para ações e destaques */
+/*===== NOVA PALETA BOM BRASIL (CLEAN & SÉRIA) =====*/
+/* O Azul foi removido. A base agora é neutra para destacar o Verde de conversão */
 :root{
-    --first-color: #0A1B60; /* Azul Corporativo: Transmite segurança e seriedade. Usado em Títulos e Rodapé */
-    --second-color: #00843D; /* Verde Ação: Usado apenas em botões e links importantes (como o WhatsApp) */
-    --accent-color: #FFDF00; /* Amarelo Marca: Usado em filetes e detalhes mínimos */
+    --first-color: #2B2B2B; /* Cinza Chumbo: Substitui o azul. Traz muita elegância e neutralidade para títulos e rodapé */
+    --second-color: #00843D; /* Verde Bom Brasil: Usado estritamente para botões, ícones de contato e ações */
+    --accent-color: #FFDF00; /* Amarelo Bom Brasil: Usado apenas em pequenos filetes de destaque */
     
-    --title-color: #1A1A1A; /* Quase preto: Para títulos ficarem fortes sem serem agressivos */
-    --text-color: #555555; /* Cinza médio: Muito mais confortável para leitura longa do que o preto puro */
-    --body-color: #FBFBFB; /* Fundo off-white: Tira o brilho excessivo do branco puro da tela toda */
-    --container-color: #FFFFFF; /* Branco puro: Usado apenas dentro das caixinhas/cards para dar contraste com o fundo */
+    --title-color: #1A1A1A; /* Quase preto para títulos principais */
+    --text-color: #555555; /* Cinza médio para leitura confortável */
+    --body-color: #F8F9FA; /* Fundo off-white muito leve (estilo cinza gelo) */
+    --container-color: #FFFFFF; /* Branco puro para os cards e painéis */
 }
 
-/*===== Fuente y tipografia =====*/
+/*===== Fonte e tipografia =====*/
 :root{
     --body-font: 'Poppins', sans-serif;
 
@@ -35,7 +35,7 @@
     }
 }
 
-/*===== Margenes =====*/
+/*===== Margens =====*/
 :root{
     --mb-1: 0.5rem;
     --mb-2: 1rem;
@@ -45,7 +45,7 @@
     --mb-6: 3rem;
 }
 
-/*===== z index =====*/
+/*===== Z-index =====*/
 :root{
     --z-back: -10;
     --z-normal: 1;
@@ -54,7 +54,6 @@
 }
 
 /*===== BASE =====*/
-/* Passo 2: Aplicando as cores neutras na base do site */
 *,::before,::after{
     box-sizing: border-box;
 }
@@ -65,8 +64,8 @@ body{
     margin: var(--header-height) 0 0 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    background-color: var(--body-color); /* Fundo sutilmente acinzentado */
-    color: var(--text-color); /* Textos em cinza elegante */
+    background-color: var(--body-color); 
+    color: var(--text-color); 
 }
 h1,h2,p{
     margin: 0;  
@@ -86,8 +85,16 @@ img{
 }
 
 /*===== CLASS CSS ===== */
-/* Passo 3: Títulos com aparência profissional e sublinhado sutil */
 .section-title{
     position: relative;
     font-size: var(--h2-font-size);
-    color: var(--first-color); /* Títulos em Azul Corpor
+    color: var(--first-color); /* Títulos em Cinza Chumbo */
+    margin-top: var(--mb-2);
+    margin-bottom: var(--mb-4);
+    text-align: center;
+
+    &::after{
+        position: absolute;
+        content: '';
+        width: 40px; 
+        height:
