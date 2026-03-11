@@ -7,10 +7,13 @@
     --font-semi: 600;
 }
 
-/*===== Colores =====*/
+/*===== CORES DA BOM BRASIL =====*/
+/* Adaptadas com base no logo fornecido */
 :root{
-    --first-color: #000000;
-    --second-color: #000000;
+    --first-color: #0A1B60; /* Azul escuro do logo: Usado em títulos, botões e linhas de destaque */
+    --second-color: #00843D; /* Verde vibrante do logo: Usado no rodapé e menu de celular */
+    --accent-color: #FFDF00; /* Amarelo do logo: Usado para efeitos de passar o mouse (hover) */
+    --text-color: #333333; /* Cinza escuro: Adicionado exclusivamente para os textos de leitura */
 }
 
 /*===== Fuente y tipografia =====*/
@@ -57,7 +60,8 @@ body{
     margin: var(--header-height) 0 0 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    color: var(--second-color);
+    /* Alterado de --second-color para --text-color para o texto não ficar verde */
+    color: var(--text-color); 
 }
 h1,h2,p{
     margin: 0;  
@@ -73,14 +77,14 @@ a{
 img{
     max-width: 100%;
     height: auto;
-    display: block; // borra los espacios en blanco
+    display: block; /* borra los espacios en blanco */
 }
 
 /*===== CLASS CSS ===== */
 .section-title{
     position: relative;
     font-size: var(--h2-font-size);
-    color: var(--first-color);
+    color: var(--first-color); /* Títulos em Azul */
     margin-top: var(--mb-2);
     margin-bottom: var(--mb-4);
     text-align: center;
@@ -94,7 +98,7 @@ img{
         right: 0;
         margin: auto;
         top: 2rem;
-        background-color: var(--first-color);
+        background-color: var(--second-color); /* Linha abaixo do título em Verde */
     }
 }
 .section{
@@ -138,7 +142,7 @@ img{
             width: 80%;
             height: 100%;
             padding: 2rem;
-            background-color: var(--second-color);
+            background-color: var(--second-color); /* Fundo do menu mobile em Verde */
             transition: .5s;
         }
     }
@@ -159,15 +163,15 @@ img{
                 height: 0.18rem;
                 left: 0;
                 top: 2rem;
-                background-color: var(--first-color);
+                background-color: var(--accent-color); /* Linha amarela ao passar o mouse */
             }
         }
     }
     &__logo{
-        color: var(--second-color);
+        color: var(--first-color); /* Logo em Azul no menu */
     }
     &__toggle{
-        color: var(--second-color);
+        color: var(--first-color); /* Ícone de menu mobile em Azul */
         font-size: 1.5rem;
         cursor: pointer;
     }
@@ -180,7 +184,7 @@ img{
     height: 0.18rem;
     left: 0;
     top: 2rem;
-    background-color: var(--first-color);
+    background-color: var(--accent-color); /* Linha amarela para o menu ativo */
 }
 
 /*=== Show menu ===*/
@@ -201,7 +205,7 @@ img{
         margin-bottom: var(--mb-5);
 
         &-color{
-            color: var(--first-color);
+            color: var(--second-color); /* Palavra em destaque na Hero section em Verde */
         }
     }
     &__social{
@@ -211,10 +215,10 @@ img{
             width: max-content;
             margin-bottom: var(--mb-2);
             font-size: 1.5rem;
-            color: var(--second-color);
+            color: var(--first-color); /* Ícones sociais/telefone em Azul */
 
             &:hover{
-                color: var(--first-color);
+                color: var(--second-color); /* Fica verde ao passar o mouse */
             }
         }
     }
@@ -230,7 +234,7 @@ img{
 /*BUTTONS*/
 .button{
     display: inline-block;
-    background-color: var(--first-color);
+    background-color: var(--first-color); /* Botão em Azul */
     color: #fff;
     padding: .75rem 2.5rem;
     font-weight: var(--font-semi);
@@ -238,6 +242,7 @@ img{
 
     &:hover{
         box-shadow: 0px 10px 36px rgba(0,0,0,.15);
+        background-color: var(--second-color); /* Fica verde ao passar o mouse */
     }
 }
 
@@ -261,7 +266,7 @@ img{
     }
 }
 
-/* ===== SKILLS =====*/
+/* ===== SKILLS / SERVICES =====*/
 .skills{
     &__container{
         row-gap: 2rem;
@@ -287,7 +292,7 @@ img{
     &__icon{
         font-size: 2rem;
         margin-right: var(--mb-2);
-        color: var(--first-color);
+        color: var(--first-color); /* Ícones de serviço em Azul */
     }
     &__names{
         display: flex;
@@ -318,7 +323,7 @@ img{
         border-radius: .5rem;
     }
 }
-/* ===== WORK =====*/
+/* ===== WORK / AREAS =====*/
 .work{
     &__container{
         row-gap: 2rem;
@@ -347,7 +352,7 @@ img{
         font-weight: var(--font-semi);
         padding: 1rem;
         border-radius: .5rem;
-        border: 1.5px solid var(--second-color);
+        border: 1.5px solid var(--text-color);
         outline: none;
         margin-bottom: var(--mb-4);
     }
@@ -363,7 +368,7 @@ img{
 
 /* ===== FOOTER =====*/
 .footer{
-    background-color: var(--second-color);
+    background-color: var(--second-color); /* Rodapé em Verde */
     color: #fff;
     text-align: center;
     font-weight: var(--font-semi);
@@ -380,11 +385,16 @@ img{
         font-size: 1.5rem;
         color: #fff;
         margin: 0 var(--mb-2);
+        
+        &:hover{
+            color: var(--accent-color); /* Ícone social fica amarelo ao passar o mouse */
+        }
     }
 }
 
 /* ===== MEDIA QUERIES=====*/
-@media screen and(min-width: 768px){
+/* Corrigido o espaço antes do parêntese */
+@media screen and (min-width: 768px){
     body{
         margin: 0;
     }
@@ -416,75 +426,12 @@ img{
             display: none;
         }
         &__link{
-            color: var(--second-color);
-        }
-    }
-    .home{
-        height: 100vh;
-        &__data{
-            align-self: flex-end;
-        }
-        &__social{
-            padding-top: 0;
-            padding-bottom: 2.5rem;
-            flex-direction: row;
-            align-self: flex-end;
-
-            &-icon{
-                margin-bottom: 0;
-                margin-right: var(--mb-4);
-            }
-        }
-        &__img{
-            width: 457px;
-            bottom: 15%;
-        }
-    }
-
-    .about{
-        &__container{
-            grid-template-columns: repeat(2,1fr);
-            align-items: center;
-            text-align: initial;
-        }
-        &__img{
-            & img{
-                width: 300px;
+            color: var(--text-color); /* Links do menu superior no desktop */
+            
+            &:hover{
+                color: var(--first-color); /* Fica azul ao passar o mouse */
             }
         }
     }
-    .skills{
-        &__container{
-            grid-template-columns: repeat(2,1fr);
-            align-items: center;
-            text-align: initial;
-        }
-    }
-    .work{
-        &__container{
-            grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(2, 1fr);
-            column-gap: 2rem;
-        }
-    }
-    .contact{
-        &__form{
-            width: 360px;
-        }
-        &__container{
-            justify-items: center;
-        }
-    }
-
-}
-@media screen and(min-width: 1024px){
-    .bd-grid{
-        margin-left: auto;
-        margin-right: auto;
-    }
     .home{
-        &__img{
-            right: 10%;
-        }
-    }
-}
+        height: 10
